@@ -17,9 +17,7 @@
 
             <h1>Rise of house prices in Austin, TX</h1>
             <p>Paragraph 1.</p>
-            <p>The mean home price in 2018 was XXXXXX. Some of the cities in the Austin metropolitan area didn't have home listings at all, according to data from this research. 
-                In 2019, we start to see property prices rising with an mean increase of XXXXX when compared to 2018. More home listings are now available. 
-                In 2020, suposedely due to the COVID pandemic, the housing market became a sellers market. The median sale price increased to with the region of ASDAOSIDASd averaging an incredible 1.4 M, </p>
+            <p>Paragraph 2.</p>
             <div id="chart"></div>        
 
             <!-- CHART COMES HERE -->
@@ -27,9 +25,9 @@
                 <p>
                     <center>
                         <div class="pagination">
-                            <a class="active" href="#">2018</a>
+                            <a href="index.html">2018</a>
                             <a href="2019.html">2019</a>
-                            <a href="#">2020</a>
+                            <a class="active" href="#">2020</a>
                         </div>
                     </center>
                 </p>
@@ -80,14 +78,14 @@
                         .enter().append("rect")
                             .attr("class", "bar")
                             .attr("x", function(d) { return xScale(d.City_Community); })
-                            .attr("y", function(d) { return yScale(d.Y2018); })
+                            .attr("y", function(d) { return yScale(d.Y2020); })
                             .attr("width", xScale.bandwidth())
-                            .attr("height", function(d) { return height - yScale(d.Y2018); })
+                            .attr("height", function(d) { return height - yScale(d.Y2020); })
                             .on("mouseover", function (d) {
                                 div.style("opacity", 1)
                                     .style("left", (d3.event.pageX) + "px")
                                     .style("top", (d3.event.pageY) + "px")
-                                    .html("Average for " + d.City_Community + " in 2018:  $" + d.Y2018.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+                                    .html("Average for " + d.City_Community + " in 2018:  $" + d.Y2020.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
                             })
                             .on("mouseout", function (d, i) {
                                 div.style("opacity", 0);
