@@ -1,5 +1,6 @@
 <html>
     <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
     <head>
         <title>Average house prices for the Austin metropolitan area</title>
     </head>
@@ -29,7 +30,7 @@
                         <div class="pagination">
                             <a class="active" href="#">2018</a>
                             <a href="2019.html">2019</a>
-                            <a href="#">2020</a>
+                            <a href="2020.html">2020</a>
                         </div>
                     </center>
                 </p>
@@ -95,6 +96,31 @@
                             .attr("fill", "#951703")
                             .attr("stroke", "#951703")
                             .text("Average sale price");
+
+                    const annotations = [
+                        {
+                            note: {
+                                label: "With a population of 144, Driftwood had one house sale in the year of 2018 bringing the state average up.",
+                                title: "Lone Star City",
+                                align: "left"
+                            },
+                            x: 339,
+                            y: 191,
+                            dy: -50,
+                            dx: 100,
+                            subject: { radius: 50, radiusPadding: 10 },
+                        },
+                    ];
+
+                    const makeAnnotations = d3.annotation()
+                        .type(d3.annotationLabel)
+                        .annotations(annotations)
+
+                    d3.select("svg")
+                        .append("g")
+                        .attr("transform", "translate(50,50)")
+                        .attr("class", "annotation-group")
+                        .call(makeAnnotations)
                 }
             </script>        
             <p>Some other text here.</p>

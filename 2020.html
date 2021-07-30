@@ -1,5 +1,6 @@
 <html>
     <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
     <head>
         <title>Average house prices for the Austin metropolitan area</title>
     </head>
@@ -17,7 +18,9 @@
 
             <h1>Rise of house prices in Austin, TX</h1>
             <p>Paragraph 1.</p>
-            <p>Paragraph 2.</p>
+            <p>The mean home price in 2018 was XXXXXX. Some of the cities in the Austin metropolitan area didn't have home listings at all, according to data from this research. 
+                In 2019, we start to see property prices rising with an mean increase of XXXXX when compared to 2018. More home listings are now available. 
+                In 2020, suposedely due to the COVID pandemic, the housing market became a sellers market. The median sale price increased to with the region of ASDAOSIDASd averaging an incredible 1.4 M, </p>
             <div id="chart"></div>        
 
             <!-- CHART COMES HERE -->
@@ -93,6 +96,31 @@
                             .attr("fill", "#951703")
                             .attr("stroke", "#951703")
                             .text("Average sale price");
+
+                    const annotations = [
+                        {
+                            note: {
+                                label: "This city had two properties sold this year with the most expensive one sold by $1,750,000",
+                                title: "Off the charts!",
+                                align: "left"
+                            },
+                            x: 733,
+                            y: -50,
+                            dy: 100,
+                            dx: -200,
+                            subject: { radius: 50, radiusPadding: 10 },
+                        },
+                    ];
+
+                    const makeAnnotations = d3.annotation()
+                        .type(d3.annotationLabel)
+                        .annotations(annotations)
+
+                    d3.select("svg")
+                        .append("g")
+                        .attr("transform", "translate(50,50)")
+                        .attr("class", "annotation-group")
+                        .call(makeAnnotations)
                 }
             </script>        
             <p>Some other text here.</p>
