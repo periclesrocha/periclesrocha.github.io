@@ -14,23 +14,37 @@
 
     <body onload='init()'>
         <div class="content">
-            Austin house prices... (introduction goes here)    
-
             <h1>Rise of house prices in Austin, TX</h1>
-            <p>Paragraph 1.</p>
-            <p>The mean home price in 2018 was XXXXXX. Some of the cities in the Austin metropolitan area didn't have home listings at all, according to data from this research. 
-                In 2019, we start to see property prices rising with an mean increase of XXXXX when compared to 2018. More home listings are now available. 
-                In 2020, suposedely due to the COVID pandemic, the housing market became a sellers market. The median sale price increased to with the region of ASDAOSIDASd averaging an incredible 1.4 M, </p>
+            <p>
+                The real estate market can be intimidating for anyone looking for a new home. For first time home buyers and experienced investors alike, news articles are citing that we're living through the hottest housing market in decades<a href="#footnote1">[1]</a>.
+            </p>
+
+            <p>
+                For many people, buying a house is one of the most important decisions they'll make in their lives<a href="#footnote2">[2]</a>. However, when is the right time to buy a house? Are prices high right now, and will they further increase? Should someone consider purchasing a house thinking the market may worsen? How does one maximize their investment by buying at the right time?
+            </p>
+
+            <p> 
+                In this article, we show the evolution of home prices in one of the hottest markets in the country: Austin, TX (and metropolitan area). These prices are based the last sale price reported for these properties on redfin.com. We believe that the trends in Austin can serve as a thermometer for the rest of the country due to high interest driven by the COVID-19 pandemic, which is shifting workers to home-offices<a href="#footnote3">[3]</a>, but in fact, prices are rising since before the pandemic.
+            </p>
+
+            <p> 
+                Don't believe us? Let's look at the data. Some navigation hints: 
+                <ul>
+                    <li>Select an year below the chart to see the median home sale price for each city (or unincorporated community).</li>
+                    <li>You can see the actual median by hovering your mouse over the bars in the chart.</li>
+                    <li>Note that some cities didn't have house sales reported in that year.</li>
+                  </ul>                   
+            </p>
             <div id="chart"></div>        
 
             <!-- CHART COMES HERE -->
             <svg width=900 height=600>
                 <p>
                     <center>
-                        <div class="pagination">
+                        <div class="pagination" id="paginator">
                             <a class="active" href="#">2018</a>
-                            <a href="2019.html">2019</a>
-                            <a href="2020.html">2020</a>
+                            <a href="2019.html#paginator">2019</a>
+                            <a href="2020.html#paginator">2020</a>
                         </div>
                     </center>
                 </p>
@@ -123,7 +137,12 @@
                         .call(makeAnnotations)
                 }
             </script>        
-            <p>Some other text here.</p>
+            <p>References:</p>
+            <p>
+                <p id="footnote1">[1]: <a href="https://www.forbes.com/sites/forbesrealestatecouncil/2021/07/19/how-to-succeed-as-a-first-time-home-buyer-in-todays-market/?sh=79e0d37f19f8)">How To Succeed As A First-Time Home Buyer In Today’s Market</a> </p>
+                <p id="footnote2">[2]: <a href="https://www.retirementstewardship.com/2016/05/28/4-important-financial-decisions-1-house-purchase">Your 4 Most Important Financial Decisions: #1 – The House Purchase</a></p>
+                <p id="footnote3">[3]: <a href="https://www.msn.com/en-us/lifestyle/career/why-hot-desking-is-a-terrible-idea/ar-AAMjgTM?ocid=BingNewsSearch">Why hot-desking is a terrible idea</a></p>
+            </p>
         </div>
     </body>
 </html>
