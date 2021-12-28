@@ -15,7 +15,7 @@ header {
 	display: block;
 }
 header .profileLogo .logoPlaceholder {
-	background-color: rgba(208,207,207,1.00);
+	background-color: rgba(255,255,255,1.00);
 	width: 187px;
 	text-align: center;
 }
